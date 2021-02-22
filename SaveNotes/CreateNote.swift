@@ -10,12 +10,12 @@ import SwiftUI
 struct CreateNote: View {
     @State var title: String = "title"
     @State var text: String = "note text"
-//    @State var bookmarked: Bool = false
-//    @State var timestamp: Date = Date.init()
+    //    @State var bookmarked: Bool = false
+    //    @State var timestamp: Date = Date.init()
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) private var viewContext
-
-
+    
+    
     
     var body: some View {
         NavigationView {
@@ -28,7 +28,8 @@ struct CreateNote: View {
                 }
             }.navigationBarTitle("Add note").listStyle(GroupedListStyle())
         }.navigationBarItems(trailing: Button("Save", action: saveNote).disabled(self.title.isEmpty))
-
+    }
+    
     
     func saveNote() {
         let newNote = Note(context: viewContext)
@@ -36,7 +37,7 @@ struct CreateNote: View {
         newNote.text = self.text
         newNote.bookmarked = false
         newNote.timestamp = Date()
-
+        
         
         do {
             try viewContext.save()
@@ -50,9 +51,10 @@ struct CreateNote: View {
     }
 }
 
+
 struct CreateNote_Previews: PreviewProvider {
     static var previews: some View {
         CreateNote().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-
+        
     }
 }
