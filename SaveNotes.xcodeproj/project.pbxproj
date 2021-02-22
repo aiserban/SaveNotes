@@ -13,6 +13,7 @@
 		75E0590225DEA77600F6AE60 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75E0590125DEA77600F6AE60 /* Preview Assets.xcassets */; };
 		75E0590425DEA77600F6AE60 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E0590325DEA77600F6AE60 /* Persistence.swift */; };
 		75E0590725DEA77600F6AE60 /* SaveNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75E0590525DEA77600F6AE60 /* SaveNotes.xcdatamodeld */; };
+		75E0591025E3FF2500F6AE60 /* CreateNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E0590F25E3FF2500F6AE60 /* CreateNote.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		75E0590325DEA77600F6AE60 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		75E0590625DEA77600F6AE60 /* SaveNotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SaveNotes.xcdatamodel; sourceTree = "<group>"; };
 		75E0590825DEA77600F6AE60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75E0590F25E3FF2500F6AE60 /* CreateNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNote.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +58,9 @@
 		75E058F925DEA77500F6AE60 /* SaveNotes */ = {
 			isa = PBXGroup;
 			children = (
-				75E058FA25DEA77500F6AE60 /* SaveNotesApp.swift */,
 				75E058FC25DEA77500F6AE60 /* ContentView.swift */,
+				75E0590F25E3FF2500F6AE60 /* CreateNote.swift */,
+				75E058FA25DEA77500F6AE60 /* SaveNotesApp.swift */,
 				75E058FE25DEA77600F6AE60 /* Assets.xcassets */,
 				75E0590325DEA77600F6AE60 /* Persistence.swift */,
 				75E0590825DEA77600F6AE60 /* Info.plist */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75E0591025E3FF2500F6AE60 /* CreateNote.swift in Sources */,
 				75E0590425DEA77600F6AE60 /* Persistence.swift in Sources */,
 				75E058FD25DEA77500F6AE60 /* ContentView.swift in Sources */,
 				75E0590725DEA77600F6AE60 /* SaveNotes.xcdatamodeld in Sources */,
