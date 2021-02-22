@@ -9,8 +9,8 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
     
+    @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Note.timestamp, ascending: true)],
         animation: .default)
@@ -20,7 +20,7 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(notes) { note in
-                    Text("Item at \(note.timestamp!, formatter: itemFormatter)")
+                    Text(note.title!)
                 }.onDelete(perform: deleteNotes)
             }
             .toolbar {
@@ -67,6 +67,18 @@ private let itemFormatter: DateFormatter = {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        let context = PersistenceController.preview.container.viewContext
+        let note = Note(context: context)
+        note.title = "adas"
+        note.text = "sad"
+        note.bookmarked = false
+        note.timestamp = Date()
+        do {
+            try context.save()
+        } catch {
+            
+        }
+        
+        return ContentView().environment(\.managedObjectContext, context)
     }
 }

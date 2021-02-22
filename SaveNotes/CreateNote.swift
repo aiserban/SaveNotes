@@ -27,20 +27,16 @@ struct CreateNote: View {
                     TextEditor(text: $text)
                 }
             }.navigationBarTitle("Add note").listStyle(GroupedListStyle())
-        }.navigationBarItems(trailing: Button("Save", action: saveNote))
-//        .toolbar(content: {
-//            ToolbarItem(placement: .primaryAction, content: {
-//                Button(action: saveNote, label: {
-//                    Text("Save")
-//                })
-//            })
-//        })
-    }
+        }.navigationBarItems(trailing: Button("Save", action: saveNote).disabled(self.title.isEmpty))
+
     
     func saveNote() {
         let newNote = Note(context: viewContext)
-        newNote.timestamp = Date()
+        newNote.title = self.title
+        newNote.text = self.text
         newNote.bookmarked = false
+        newNote.timestamp = Date()
+
         
         do {
             try viewContext.save()
