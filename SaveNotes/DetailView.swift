@@ -32,7 +32,6 @@ struct DetailView: View {
     }
     
     var body: some View {
-        NavigationView {
             List {
                 Section {
                     TextField("Title", text: $title)
@@ -41,7 +40,7 @@ struct DetailView: View {
                     TextEditor(text: $text)
                 }
             }.navigationBarTitle("Add note").listStyle(GroupedListStyle())
-        }.navigationBarItems(trailing: Button("Save", action: saveNote).disabled(self.title.isEmpty))
+            .navigationBarItems(trailing: Button("Save", action: saveNote).disabled(self.title.isEmpty))
     }
     
     func saveNote() {
