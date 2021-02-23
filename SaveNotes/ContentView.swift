@@ -25,21 +25,22 @@ struct ContentView: View {
                     NavigationLink(note.title!, destination: DetailView(note: note))
                 }.onDelete(perform: deleteNotes)
             }
-            .listStyle(SidebarListStyle())
-            .toolbar {
-                //                #if os(iOS)
-                ToolbarItem(placement: .primaryAction, content: ({
-                    NavigationLink("Add", destination: CreateNote())
-                }))
-//                #if os(macOS)
-                ToolbarItem(placement: .principal, content: ({
-                    EditButton()
-                }))
-                
-            }
+//            .listStyle(SidebarListStyle())
+//            .toolbar {
+//                //                #if os(iOS)
+////                ToolbarItem(placement: .primaryAction, content: ({
+////                    NavigationLink("Add", destination: DetailView())
+////                }))
+////                #if os(macOS)
+//                ToolbarItem(placement: .principal, content: ({
+//                    EditButton()
+//                }))
+//
+//            }
             
 //            .id(refresh)
             .navigationBarTitle("Notes")
+            .navigationBarItems(trailing: NavigationLink("Add", destination: DetailView()))
 //            .navigationBarBackButtonHidden(true)
             
             //                #endif
