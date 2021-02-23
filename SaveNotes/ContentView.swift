@@ -10,6 +10,7 @@ import CoreData
 
 struct ContentView: View {
     
+    @State private var refresh = UUID()
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Note.timestamp, ascending: true)],
@@ -18,25 +19,33 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
+            
             List {
                 ForEach(notes) { note in
-                    Text(note.title!)
+                    NavigationLink(note.title!, destination: DetailView(note: note))
                 }.onDelete(perform: deleteNotes)
             }
+            .listStyle(SidebarListStyle())
             .toolbar {
                 //                #if os(iOS)
                 ToolbarItem(placement: .primaryAction, content: ({
                     NavigationLink("Add", destination: CreateNote())
                 }))
-                ToolbarItem(placement: .bottomBar, content: ({
+//                #if os(macOS)
+                ToolbarItem(placement: .principal, content: ({
                     EditButton()
                 }))
                 
-            }.navigationBarTitle("Notes")
+            }
+            
+//            .id(refresh)
+            .navigationBarTitle("Notes")
 //            .navigationBarBackButtonHidden(true)
+            
             //                #endif
             
-        }
+        }.navigationViewStyle(DoubleColumnNavigationViewStyle())
+
         
         
     }
