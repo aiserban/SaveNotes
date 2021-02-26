@@ -40,7 +40,11 @@ struct ContentView: View {
             
 //            .id(refresh)
             .navigationBarTitle("Notes")
-            .navigationBarItems(trailing: NavigationLink("Add", destination: DetailView()))
+            .navigationBarItems(trailing: NavigationLink(
+                                    destination: DetailView(),
+                                    label: {
+                                        Image(systemName: "square.and.pencil").imageScale(.large)
+                                    }))
 //            .navigationBarBackButtonHidden(true)
             
             //                #endif
