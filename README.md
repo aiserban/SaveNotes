@@ -19,7 +19,7 @@ Oh and of course, you can scroll if the list is long enough.
 
 
 ### Screenshots
-![Creating notes](docs/add.png | width=100)
+<img src="docs/add.png" width=100pt alt="Creating a note"> 
 
 ![Deleting notes](docs/delete.png | width=100)
 
