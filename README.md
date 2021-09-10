@@ -23,4 +23,4 @@ Oh and of course, you can scroll if the list is long enough.
 
 <img src="docs/delete.png" width=300pt alt="Deleting a note"> 
 
-<img src="docs/mac.png" width=300pt alt="MacOS version"> 
+<img src="docs/mac.png" width=800pt alt="MacOS version"> 
