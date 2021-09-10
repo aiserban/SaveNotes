@@ -19,8 +19,8 @@ Oh and of course, you can scroll if the list is long enough.
 
 
 ### Screenshots
-<img src="docs/add.png" width=100pt alt="Creating a note"> 
+<img src="docs/add.png" width=300pt alt="Creating a note"> 
 
-![Deleting notes](docs/delete.png | width=100)
+<img src="docs/delete.png" width=300pt alt="Deleting a note"> 
 
-![MacOS version](docs/mac.png | width=100)
+<img src="docs/mac.png" width=300pt alt="MacOS version"> 
